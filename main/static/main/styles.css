@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF; /* Цвет заголовка */
+}
+
+.goal-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрирование карточек */
+    gap: 20px; /* Пробел между карточками */
+}
+
+.goal-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px; /* Ширина карточки */
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточек */
+}
+
+.goal-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.goal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.goal-card h2 {
+    margin: 10px 0; /* Убираем отступы между заголовком и текстом */
+    color: #333; /* Цвет текста заголовка */
+}
+
+.goal-card p {
+    margin: 0; /* Убираем отступы у текста под карточкой */
+    color: #666; /* Цвет текста под карточкой */
+}
+
+.container {
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрирование контейнера */
+    background: white; /* Белый фон */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    padding: 20px; /* Внутренние отступы */
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px; /* Отступ сверху */
+    text-decoration: none; /* Убрать подчеркивание */
+    color: #007BFF; /* Цвет ссылки */
+    border: 1px solid #007BFF; /* Цвет границы */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px 15px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+}
+
+a:hover {
+    background-color: #007BFF; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
+}
