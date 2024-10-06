@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-0c_7_edkml@zc@)=b(!sm%_j9gn(=yme5o+6p9d+q$wk_173r3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Development key, keep it secret in production releases
+GENAI_API_KEY = "AIzaSyBujDt26uU64zaQEJn1WRzjVpdOGZAD268"
+
 ALLOWED_HOSTS = []
 
 

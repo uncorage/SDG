@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'main/styles.css' %}">
-    <title>Select Active or Passive</title>
+    <title>Task List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 600px; /* Set a maximum width for the container */
+            max-width: 800px; /* Increased width for more content */
             margin: 0 auto; /* Center the container */
             background-color: white; /* White background for the container */
             padding: 20px; /* Padding inside the container */
@@ -29,10 +29,18 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
-        .goal-description {
-            margin-bottom: 40px; /* Space below the description */
-            font-size: 16px; /* Font size for the description */
-            color: #333; /* Text color for the description */
+        .task {
+            margin-bottom: 20px; /* Space below each task */
+            padding: 15px;
+            border: 1px solid #ddd; /* Border for each task */
+            border-radius: 5px; /* Rounded corners for tasks */
+            background-color: #f9f9f9; /* Light background for tasks */
+        }
+
+        .task h2 {
+            margin: 0; /* Remove default margin */
+            font-size: 20px; /* Task title font size */
+            color: #007BFF; /* Task title color */
         }
 
         .button-container {
@@ -60,25 +68,16 @@
 </head>
 <body>
     <header>
-        <h1>Select Mode</h1>
+        <h1>New Task</h1>
     </header>
     <main>
         <div class="container">
-            <div class="goal-description">
-                {{ goal.description }}
-            </div>
-            <div class="button-container">
-                <form action="{% url 'active_view' goal_number=goal.number %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="button">Active</button>
-                </form>
-                <form action="{% url 'passive_view' goal_number=goal.number %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="button">Passive</button>
-                </form>
-                <form action="{% url 'task_list' %}" method="get">
-                    <button type="submit" class="button">Task List</button>
-                </form>
+            <div class="task">
+                <h2>{{ task.title }}</h2>
+                <p><strong>Description:</strong> {{ task.description }}</p>
+                <p><strong>Location:</strong> {{ task.location }}</p>
+                <p><strong>Benefits:</strong> {{ task.benefits_description|default:"No benefits described." }}</p>
+                <p><strong>Date Created:</strong> {{ task.date_created }}</p>
             </div>
         </div>
     </main>

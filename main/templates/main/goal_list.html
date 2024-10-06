@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/styles.css' %}"> <!-- Стили для страницы -->
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
     <title>Sustainable Development Goals</title>
     <style>
         body {
@@ -17,29 +17,28 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #007BFF; /* Цвет заголовка */
+            color: #007BFF;
         }
 
         .goal-cards {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Центрирование карточек */
-            gap: 20px; /* Пробел между карточками */
+            justify-content: center;
+            gap: 20px;
         }
 
         .goal-card {
             background: white;
-            border: 1px solid #ddd;
             border-radius: 5px;
             padding: 15px;
-            width: 250px; /* Ширина карточки */
+            width: 250px;
             text-align: center;
             transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточек */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .goal-card:hover {
-            transform: scale(1.05); /* Увеличение карточки при наведении */
+            transform: scale(1.05);
         }
 
         .goal-image {
@@ -49,13 +48,13 @@
         }
 
         .goal-card h2 {
-            margin: 10px 0; /* Убираем отступы между заголовком и текстом */
-            color: #333; /* Цвет текста заголовка */
+            margin: 10px 0;
+            color: #333;
         }
 
         .goal-card p {
-            margin: 0; /* Убираем отступы у текста под карточкой */
-            color: #666; /* Цвет текста под карточкой */
+            margin: 0;
+            color: #666;
         }
     </style>
 </head>
@@ -67,13 +66,13 @@
         <div class="goal-cards">
             {% for goal in goals %}
                 <div class="goal-card">
-                    <a href="{% url 'goal_detail' goal.number %}"> <!-- Ссылка на детальную страницу цели -->
+                    <a href="{% url 'goal_detail' goal.number %}">
                         {% if goal.image %}
-                            <img src="{{ goal.image.url }}" alt="Goal SDG {{ goal.number }}" class="goal-image"> <!-- Изображение цели -->
+                            <img src="{{ goal.image.url }}" alt="Goal SDG {{ goal.number }}" class="goal-image">
                         {% endif %}
-                        <h2>Goal {{ goal.number }}</h2> <!-- Номер цели SDG -->
+                        <h2>Goal {{ goal.number }}</h2>
+                        <h2>Goal {{ goal.title }}</h2>
                     </a>
-                    <p>{{ goal.title }}</p> <!-- Текст под карточкой -->
                 </div>
             {% empty %}
                 <p>No available goals.</p>
